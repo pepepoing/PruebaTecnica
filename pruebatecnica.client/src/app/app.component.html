@@ -1,0 +1,53 @@
+<h1 id="tableLabel">Listado de clientes desde LinQ</h1>
+
+
+<p *ngIf="!clients"><em>Cargando... Refresque si el backend no alcanzo a cargar.</em></p>
+
+<table *ngIf="clients">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Télefono</th>
+      <th>Pais</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of clients | paginate: { itemsPerPage: 10, currentPage: pageNumber, totalItems:Count, id: 'first' }">
+      <td>{{ item.name }}</td>
+      <td>{{ item.phoneNumber | phoneFormat }}</td>
+      <td>{{ item.contry }}</td>
+    </tr>
+  </tbody>
+  <pagination-controls (pageChange)="onPageChange($event)"
+                       id="first"
+                       previousLabel="Anterior"
+                       nextLabel="Siguiente"
+                       screenReaderPageLabel="Página"></pagination-controls>
+</table>
+
+<h1 id="tableLabel">Listado de clientes desde un Procedimiento de almacenado</h1>
+
+<p *ngIf="!spClients"><em>Cargando... Refresque si el backend no alcanzo a cargar.</em></p>
+
+<table *ngIf="spClients">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Télefono</th>
+      <th>Pais</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of spClients | paginate: { itemsPerPage: 10, currentPage: spPageNumber, totalItems:spCount, id: 'second' }">
+      <td>{{ item.name }}</td>
+      <td>{{ item.phoneNumber | phoneFormat }}</td>
+      <td>{{ item.contry }}</td>
+    </tr>
+  </tbody>
+  <pagination-controls (pageChange)="onSpPageChange($event)"
+                       id="second"
+                       previousLabel="Anterior"
+                       nextLabel="Siguiente"
+                       screenReaderPageLabel="Página"></pagination-controls>
+</table>
+

@@ -1,0 +1,8 @@
+@PruebaTecnica.Server_HostAddress = http://localhost:5117
+
+GET {{PruebaTecnica.Server_HostAddress}}/ClientsData/
+Accept: application/json
+
+GET {{PruebaTecnica.Server_HostAddress}}/SPClientsData/
+Accept: application/json
+###

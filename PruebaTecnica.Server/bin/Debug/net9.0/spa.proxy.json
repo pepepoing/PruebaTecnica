@@ -1,0 +1,10 @@
+{
+"SpaProxyServer": {
+"ServerUrl": "https://localhost:56201",
+"RedirectUrl": "",
+"LaunchCommand": "npm start",
+"WorkingDirectory": "D:\\net proyect\\PruebaTecnica\\PruebaTecnica.Server\\..\\pruebatecnica.client",
+"MaxTimeoutInSeconds": "120",
+"KeepRunning": "false"
+}
+}
